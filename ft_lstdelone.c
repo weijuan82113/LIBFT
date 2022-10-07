@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/21 22:22:17 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 00:03:25 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !del)
+	if (!lst)
 		return ;
-	del(lst -> content);
-	free (lst);
+	else if (lst && del)
+	{
+		del(lst -> content);
+		free (lst);
+	}
 	lst = NULL;
 }
-
-// static void	del(void *del_content)
-// {
-// 	del_content = NULL;
-// }
 
 // #include <stdio.h>
 

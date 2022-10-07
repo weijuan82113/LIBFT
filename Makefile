@@ -6,7 +6,7 @@
 #    By: wchen <wchen@42studen>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2022/09/21 22:07:13 by wchen            ###   ########.fr        #
+#    Updated: 2022/10/03 18:45:08 by wchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,9 +73,6 @@ all:		${NAME}
 
 ${NAME}:	${OBJS}
 			ar rcs ${NAME} ${OBJS}
-
-.c.o:
-			${CC} ${CFLAGS} -c $< -o $@
 
 clean:
 			rm -f ${OBJS}

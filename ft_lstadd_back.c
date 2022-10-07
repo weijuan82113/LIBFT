@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/21 22:01:52 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 00:20:32 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tem_lst;
+	t_list	*p_lst;
 
+	p_lst = *lst;
 	if (!lst || !new)
 		return ;
 	if (!*lst)
 		*lst = new;
 	else
 	{
-		tem_lst = ft_lstlast(*lst);
-		tem_lst -> next = new;
+		p_lst = ft_lstlast(p_lst);
+		p_lst -> next = new;
 	}
 }
 // #include <stdio.h>

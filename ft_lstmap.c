@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/21 22:21:20 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 00:19:00 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	ret_lst = NULL;
 	p_lst = lst;
-	if (!p_lst || !f || !del)
+	if (!p_lst || !f)
 		return (NULL);
 	while (p_lst)
 	{
 		new_node = ft_lstnew(f(p_lst -> content));
 		if (!new_node)
 		{
-			ft_lstclear(&p_lst, del);
+			ft_lstclear(&ret_lst, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&ret_lst, new_node);

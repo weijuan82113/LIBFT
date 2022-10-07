@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/21 22:19:52 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/07 22:49:07 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list	*p_lst;
 
 	p_lst = lst;
-	if (!p_lst | !f)
+	if (!p_lst || !f)
 		return ;
 	while (p_lst)
 	{
