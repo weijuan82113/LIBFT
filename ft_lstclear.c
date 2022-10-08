@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/08 00:59:05 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 14:58:17 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,27 @@
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
+	t_list	*p_lst;
 
 	if (!lst)
 		return ;
-	while (*lst)
+	p_lst = *lst;
+	while (p_lst)
 	{
-		temp = (*lst)-> next;
-		ft_lstdelone(*lst, del);
-		*lst = temp;
+		temp = p_lst -> next;
+		ft_lstdelone(p_lst, del);
+		p_lst = temp;
 	}
+	*lst = NULL;
 }
-//#include <stdio.h>
-// static void	del(void *del_content)
-// {
 
-// 	del_content = NULL;
-// }
+// #include <stdio.h>
 
 // int main (void)
 // {
-// 	char 	*content_node = "abcd";
-// 	char 	*content_new_node_1 = "efgh";
-// 	char 	*content_new_node_2 = "ijklm";
+// 	char 	*content_node = ft_strdup("abcd");
+// 	char 	*content_new_node_1 = ft_strdup("efgh");
+// 	char 	*content_new_node_2 = ft_strdup("ijklm");
 // 	t_list	*list_node;
 // 	t_list	*list_new_node1;
 // 	t_list	*list_new_node2;
@@ -49,7 +48,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 // 	ft_lstadd_back(list, list_new_node1);
 // 	ft_lstadd_back(list, list_new_node2);
 // 	printf("content of lst before_del is %s \n", (char *)(*list) -> content);
-// 	ft_lstclear(list, del);
-// 	printf("content of lst after_del is %s \n", (char *)(*list) -> content);
+// 	ft_lstclear(list, free);
+// 	printf("content of lst after_del is %p \n", (*list));
 // 	return (0);
 // }

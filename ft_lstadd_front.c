@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/09/21 21:34:39 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 14:57:55 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
-	if (*lst != NULL)
+	else if (!*lst)
+		*lst = new;
+	else if (*lst)
 		new -> next = *lst;
 	*lst = new;
 }
@@ -36,8 +38,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 // 	new_node = ft_lstnew(content_new_node);
 // 	list_node = ft_lstnew(content_node);
 // 	ft_lstadd_front(lst, new_node);
-// 	str = new_node -> next -> content;
-// 	//str = new_node -> content;
-// 	printf("content of node is %s", str);
+// 	printf("content of node is %s", lst);
 // 	return (0);
 // }
