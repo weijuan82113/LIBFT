@@ -6,7 +6,7 @@
 /*   By: wchen <wchen@42studen>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 23:39:10 by wchen             #+#    #+#             */
-/*   Updated: 2022/10/07 22:47:38 by wchen            ###   ########.fr       */
+/*   Updated: 2022/10/08 16:27:39 by wchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
-	t_list	*p_lst;
 
-	p_lst = lst;
 	i = 0;
-	while (p_lst)
+	while (lst)
 	{
-		p_lst = p_lst -> next;
+		lst = lst -> next;
 		i ++;
 	}
 	return (i);
